@@ -10,7 +10,7 @@ class TermQuery implements Query
 
     public static function create(string $field, bool|int|string $value, null | float $boost = null): static
     {
-        return new self($field, $value);
+        return new self($field, $value, $boost);
     }
 
     public function __construct(string $field, bool|int|string $value, protected null | float $boost = null)
