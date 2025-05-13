@@ -28,7 +28,7 @@ class TermQuery implements Query
         ];
 
         if ($this->boost !== null) {
-            $terms['term']['boost'] = $this->boost;
+            $term['term']['boost'] = $this->boost;
         }
 
         return $term;
