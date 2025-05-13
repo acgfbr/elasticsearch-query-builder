@@ -23,12 +23,14 @@ class TermQuery implements Query
     {
          $term = [
             'term' => [
-                $this->field => $this->value,
+                $this->field => [
+                    'value' => $this->value,
+                ],
             ],
         ];
 
         if ($this->boost !== null) {
-            $term['term']['boost'] = $this->boost;
+            $term['term'][$this->field]['boost'] = $this->boost;
         }
 
         return $term;
